@@ -108,7 +108,7 @@ services:
       - ./hadoop.env
 
   spark-master:
-    image: bitnami/spark:3.3.2
+    image: bitnami/spark:3.4.2
     container_name: spark-master
     networks:
       - spark-net
@@ -123,7 +123,7 @@ services:
       - HADOOP_CONF_DIR=/opt/bitnami/spark/conf
 
   spark-worker-1:
-    image: bitnami/spark:3.3.2
+    image: bitnami/spark:3.4.2
     container_name: spark-worker-1
     networks:
       - spark-net
@@ -140,7 +140,7 @@ services:
       - HADOOP_CONF_DIR=/opt/bitnami/spark/conf
 
   spark-worker-2:
-    image: bitnami/spark:3.3.2
+    image: bitnami/spark:3.4.2
     container_name: spark-worker-2
     networks:
       - spark-net
@@ -172,3 +172,4 @@ services:
       bash -c "pip install gdown faiss-cpu &&
       gdown -O /home/jovyan/work/nbs/un-general-debates.csv 1p2FqqFP-ZbmhFdOmvZoQzdDyF5D0MRDn;
       start-notebook.sh --ip=0.0.0.0 --allow-root --NotebookApp.token=''"
+
