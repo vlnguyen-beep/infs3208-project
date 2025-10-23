@@ -141,8 +141,8 @@ services:
       - "8081:8081"
     environment:
       - SPARK_MASTER=spark://spark-master:7077
-      - SPARK_WORKER_CORES=1
-      - SPARK_WORKER_MEMORY=512m
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=2g
       - NAMENODE_HOSTNAME=namenode
 
   spark-worker-2:
@@ -157,8 +157,8 @@ services:
       - "8082:8082"
     environment:
       - SPARK_MASTER=spark://spark-master:7077
-      - SPARK_WORKER_CORES=1
-      - SPARK_WORKER_MEMORY=512m
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=2g
       - NAMENODE_HOSTNAME=namenode
 
   # Jupyter Notebook
@@ -181,3 +181,4 @@ services:
       bash -c "pip install gdown faiss-cpu &&
                gdown -O /home/jovyan/work/nbs/un-general-debates.csv 1p2FqqFP-ZbmhFdOmvZoQzdDyF5D0MRDn;
                start-notebook.sh --ip=0.0.0.0 --allow-root --NotebookApp.token=''"
+
